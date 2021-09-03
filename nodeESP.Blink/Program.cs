@@ -2,6 +2,7 @@ using System;
 using System.Device.Gpio;
 using System.Diagnostics;
 using System.Threading;
+using nanoFramework.Runtime.Native;
 
 namespace nodeESP.Blink
 {
@@ -13,7 +14,8 @@ namespace nodeESP.Blink
     {
         public static void Main()
         {
-            Debug.WriteLine("Hello from nanoFramework!");
+            Debug.WriteLine($"Running nanoFramework on {SystemInfo.OEMString}");
+            Debug.WriteLine($"Target device: {SystemInfo.TargetName}");
 
             var gpioController = new GpioController();
 
